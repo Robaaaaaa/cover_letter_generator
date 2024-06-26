@@ -1,0 +1,24 @@
+# asyncflows-language-server
+
+default_model:
+  model: ollama/llama3
+  api_base:
+    env: api_base
+  auth_token: 
+    env: Auth_token
+flow:
+  generate:
+    action: generate_cover_letter
+    inputs:
+      role: "{{ role }}"
+      resume_text: "{{ resume_text }}"
+      job_description: "{{ job_description }}"
+      name: "{{ name }}"
+      hiring_manager: "{{ hiring_manager }}"
+      referral: "{{ referral }}"
+      company: "{{ company }}"
+      cand_address: "{{ cand_address }}"  # Optional, include if needed
+      comp_address: "{{ comp_address }}"  # Optional, include if needed
+
+default_output: generate.result
+    
